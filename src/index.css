@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#google_translate_element {
+  width: 80px !important;
+  height: 40px !important;
+}
+
+
+/* Hide the default Google Translate widget style */
+#google_translate_element .goog-te-gadget-simple {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+  }
+  
+  /* Style the translate link as a button */
+  #google_translate_element .goog-te-gadget-simple a {
+    text-decoration: none;
+    background-color: #4CAF50; /* Button background color */
+    color: white;              /* Button text color */
+    padding: 0px 0px;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    border-radius: 5px;        /* Rounded corners */
+    display: inline-block;
+    width: 100%;
+  }
+  
+  /* Button hover effect */
+  #google_translate_element .goog-te-gadget-simple a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    width: 100%;
+  }
+  
+  /* Hide the Google Translate logo icon */
+  #google_translate_element .goog-te-gadget-icon {
+    display: none;
+  }
+  
+  /* Hide Google Translate banner that sometimes appears on top */
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  } 
+  body {
+    top: 0 !important;
+  }
+  
+  /* Optional: To fix alignment issues */
+  .goog-te-gadget-simple .goog-te-menu-value span {
+    display: none;
+  }
+  .goog-te-gadget-simple .goog-te-menu-value:before {
+    content: 'Translate'; /* Button text */
+    color: white;
+  }
+  
