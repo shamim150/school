@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Container from "./layer/Container";
-import Image from "./layer/Image";
+import Container from "../layer/Container";
+import Image from "../layer/Image";
 import logo from "/Logo.png";
-import Li from "./layer/Li";
+import Li from "../layer/Li";
 import { PiDotsNineBold } from "react-icons/pi";
 import { FaAngleDown, FaSearch } from "react-icons/fa";
-import { products } from "./pages/Products";
+import { products } from "../pages/Products";
+import { MdAddIcCall } from "react-icons/md";
+import { IoMdMail } from "react-icons/io";
+import LatestNews from "./LatestNews";
 
 export const Navbar = () => {
   const [show, setShow] = useState(false); // Manage the state of the mobile menu
@@ -32,12 +35,27 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="z-10 fixed w-full top-0 bg-slate-100 ">
+    <nav className="z-10 fixed w-full top-0 bg-green-200 ">
+     <div>
+      <div className=" flex justify-center items-center bg-gradient-to-r from-primary to-secondary">
+        <div className="flex items-center gap-2 text-white text-sm font-semibold px-4 py-2">
+          <MdAddIcCall /> <a href="tel:+8801603011060">01603011060</a>
+        </div>
+        <div className="flex items-center gap-2 text-white text-sm font-semibold px-4 py-2">
+          <IoMdMail /> <a href="https://sonarbanglaschool.com" target="_blank" rel="noopener noreferrer">sonarbanglaschool.com</a>
+        
+        </div>
+
+      </div>
+
+      <LatestNews />
+     </div>
+      
       <Container className="relative flex items-center justify-between gap-5 xl:gap-0 xl:py-2 py-5 px-3 xl:px-0">
         {/* Logo */}
-        <div className="flex xl:justify-center w-fit">
+        <div className="flex xl:justify-center w-fit ">
           <Image
-            className="absolute top-1/2 xl:left-0 left-3 -translate-y-1/2 h-15 w-20"
+            className="absolute top-1/2 xl:left-0 left-3 -translate-y-1/2 h-15 w-12 "
             href="/"
             scr={logo}
             alt="Logo"
@@ -104,7 +122,7 @@ export const Navbar = () => {
             liText="গ্যালারি"
             iconName={<FaAngleDown />}
           />
-          <Li
+          {/* <Li
             onclick={() => {
               setShow(!show);
               handleClearSearch();
@@ -112,7 +130,7 @@ export const Navbar = () => {
             to={"/keyperson"}
             liText="ব্লগ"
             iconName={<FaAngleDown />}
-          />
+          /> */}
           {/* <Li
             onclick={() => {
               setShow(!show);

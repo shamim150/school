@@ -2,8 +2,8 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 // import Haeder from '../Haeder'
 import Footer from "../Footer";
-import { Navbar } from "../Navbar";
 import GoogleTranslate from "../../gooleTranslator/GoogleTranslate";
+import { Navbar } from "../Navbar/Navbar";
 
 const RootLayOut = () => {
   return (
