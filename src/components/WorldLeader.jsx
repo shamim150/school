@@ -1,33 +1,171 @@
 import React from "react";
-import Container from "./layer/Container";
-import TitleHeader from "./layer/TitleHeader";
 
 const WorldLeader = () => {
   return (
-    <div className="bg-[#ECFAFE] md:p-6 p-2 ">
-      <Container className="mb-10  ">
-        <TitleHeader
-          className="md:my-12 my-6  leading-snug text-center"
-          headerText="📘 বিদ্যালয়ের প্রধান শিক্ষকের স্বাগত বক্তব্য"
-        />
-        <div className="md:flex md:gap-10 w-full">
-          <div className="flex justify-center md:w-1/2">
-            <img
-              className="max-w-[700px] h-auto object-cover rounded-xl w-full"
-              src="/WorldLeaderPuddyMachine/puddy1jpg.jpg"
-              alt=""
-            />
+    
+
+
+
+       <section className="w-full bg-[#e9f6fb] py-10">
+      <div className="mx-auto max-w-6xl px-4">
+        {/* TOP BOX (border + gradient bg) */}
+        <div className="border-[10px] border-[#b9d9dc] bg-gradient-to-r from-[#86c9c6] via-[#a3d7d6] to-[#86c9c6] p-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+            {/* LEFT BIG CARD */}
+            <div className="lg:col-span-7">
+              <div className="rounded-md bg-white p-4 shadow-sm">
+                <div className="bg-[#6f8f00] px-4 py-2 text-sm font-bold text-white">
+                  বাংলাদেশ&apos;অন্তর্বর্তীন সরকারের মাননীয় প্রধান উপদেষ্টা।
+                </div>
+
+                <div className="mt-3 rounded-md border bg-white p-2">
+                  
+
+                  <img
+                    src="/Gallery/bigLeader.jpg"
+                    alt="World Leader"
+                    className="h-[520px] w-full rounded-md object-cover"
+                  />
+
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT 2 SMALL CARDS */}
+            <div className="lg:col-span-5">
+              <div className="rounded-md bg-white p-4 shadow-sm">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+                  {/* CARD 1 */}
+                  <div className="border border-[#2aa04a] bg-white">
+                    <div className="bg-[#6f8f00] px-3 py-2 text-center text-xs font-bold text-white">
+                      বাংলাদেশ&apos;অন্তর্বর্তীন সরকারের
+                      <br />
+                      মাননীয় শিক্ষা উপদেষ্টা
+                    </div>
+
+                    <div className="p-4">
+                      <div className="mx-auto h-40 w-40 overflow-hidden rounded-md bg-gray-100">
+                      <img
+                  src="/Gallery/bigLeader.jpg"
+                    alt="World Leader"
+                    // className="h-[520px] w-full rounded-md object-cover"
+                    className="w-full h-full object-cover object-center block"
+                  />
+                      </div>
+
+                      <p className="mt-3 text-center text-xs font-semibold text-gray-900">
+                        অধ্যাপক ড. (নাম লিখুন)
+                      </p>
+                    </div>
+
+                    <div className="border-t border-[#2aa04a] py-2 text-center">
+                      <button className="rounded-full bg-[#1b1f23] px-8 py-1 text-xs font-bold text-yellow-400">
+                        বিস্তারিত
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* CARD 2 */}
+                  <div className="border border-[#2aa04a] bg-white">
+                    <div className="bg-[#6f8f00] px-3 py-2 text-center text-xs font-bold text-white">
+                      মাধ্যমিক ও উচ্চ শিক্ষা বিভাগের
+                      <br />
+                      সচিব ড. (নাম লিখুন)
+                    </div>
+
+                    <div className="p-4">
+                      <div className="mx-auto h-40 w-40 overflow-hidden rounded-md bg-gray-100">
+                       <img
+                    src="/Gallery/bigLeader.jpg"
+                    alt="World Leader"
+                    // className="h-[520px] w-full rounded-md object-cover"
+                    className="w-full h-full object-cover object-center block"
+                  />
+                      </div>
+
+                      <p className="mt-3 text-center text-xs font-semibold text-gray-900">
+                        ড. (নাম লিখুন)
+                      </p>
+                    </div>
+
+                    <div className="border-t border-[#2aa04a] py-2 text-center">
+                      <button className="rounded-full bg-[#1b1f23] px-8 py-1 text-xs font-bold text-yellow-400">
+                        বিস্তারিত
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* end right */}
           </div>
-          <p className="flex justify-center items-center mb-4 md:text-2xl text-sm text-justify text-gray-700 md:w-1/2">
-         স্কুল হলো জ্ঞানের আলো অর্জনের প্রথম ধাপ। একজন মানুষ জীবনের ভিত্তি গড়ে তোলে এই বিদ্যালয় থেকেই। আমি যে স্কুলে পড়ি, তার নাম [আপনার স্কুলের নাম দিন]। এটি একটি পরিচ্ছন্ন, সুন্দর এবং শান্তিপূর্ণ পরিবেশে অবস্থিত। আমাদের স্কুলে দক্ষ ও আন্তরিক শিক্ষকগণ পাঠদান করেন।
-
-প্রতিদিন সকালে জাতীয় সংগীতের মাধ্যমে স্কুল শুরু হয়। আমরা শ্রেণিকক্ষে নিয়মিত পাঠ গ্রহণ করি এবং পরীক্ষার মাধ্যমে নিজের মেধা যাচাই করি। স্কুলে পাঠদানের পাশাপাশি সাংস্কৃতিক অনুষ্ঠান, ক্রীড়া প্রতিযোগিতা ও বিভিন্ন সহশিক্ষা কার্যক্রম হয়, যা আমাদের মানসিক ও শারীরিক বিকাশে সহায়তা করে।
-
-স্কুল আমাদের শৃঙ্খলা, নিয়মকানুন, সম্মান ও দায়িত্ববোধ শেখায়। এজন্য স্কুলকে বলা হয় মানুষের দ্বিতীয় ঘর। আমি আমার স্কুলকে খুব ভালোবাসি।
-          </p>
         </div>
-      </Container>
-    </div>
+
+
+
+
+
+
+        {/* BOTTOM TWO MESSAGE CARDS */}
+        <div className="mt-10 flex flex-col items-center justify-center gap-10 md:flex-row">
+          {/* Chairman */}
+          <div className="relative w-full max-w-[280px] bg-[#0e8796] pb-6 pt-14 text-center shadow-md">
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+              <div className="h-28 w-28 overflow-hidden rounded-md bg-white p-1 shadow">
+                <img
+                     src="/Gallery/gallery_1.jpg"
+                    alt="World Leader"
+                    className="w-full h-full object-cover object-center block"
+                  />
+              </div>
+            </div>
+
+            <h3 className="text-lg font-bold text-white">Message of The Chairman</h3>
+            <p className="mt-1 text-xs font-semibold text-white/90">নাম লিখুন</p>
+
+            <button className="mt-4 rounded-full bg-[#c81515] px-6 py-1 text-xs font-bold text-white">
+              View More..
+            </button>
+          </div>
+
+          {/* Headmaster */}
+          <div className="relative w-full max-w-[280px] bg-[#0e8796] pb-6 pt-14 text-center shadow-md">
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+              <div className="h-28 w-28 overflow-hidden rounded-md bg-white p-1 shadow">
+               <img
+                     src="/Gallery/gallery_1.jpg"
+                    alt="World Leader"
+                    className="w-full h-full object-cover object-center block"
+                  />
+              </div>
+            </div>
+
+            <h3 className="text-lg font-bold text-white">Message of The Headmaster</h3>
+            <p className="mt-1 text-xs font-semibold text-white/90">
+              Mohammad Shahidul Islam
+            </p>
+
+            <button className="mt-4 rounded-full bg-[#c81515] px-6 py-1 text-xs font-bold text-white">
+              View More..
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   );
 };
 
