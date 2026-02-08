@@ -6,6 +6,10 @@ import MapLocation from "./MapLocation";
 import OurClients from "./OurCorporateClients";
 import ConnectWithSlider from "./ConnectWithSlider";
 import SolutionSlider from "./SolutionForIndustries";
+import MottoOurInstitute from "./MottoOurInstitute";
+import SchoolHistory from "./SchoolHistory";
+import WhyChose from "./WhyChose";
+import Gallery from "./Gallery";
 
 
 const Home = () => {
@@ -18,11 +22,16 @@ const Home = () => {
       {/* <OurJourney /> */}
 
       <WorldLeader />
+      <MottoOurInstitute />
+      <SchoolHistory />
+      <WhyChose />  
+      <Gallery />
+      
 
-      <ConnectWithSlider />
-      <SolutionSlider />
-      <MapLocation />
-      <OurClients />
+      {/* <ConnectWithSlider /> */}
+      {/* <SolutionSlider /> */}
+      {/* <MapLocation /> */}
+      {/* <OurClients /> */}
     </div>
   );
 };

@@ -1,256 +1,193 @@
-import React, { useState } from "react";
+import React from "react";
 import Container from "./layer/Container";
 import { Link } from "react-router-dom";
-import { AiOutlineInstagram } from "react-icons/ai";
-import TitleHeader from "./layer/TitleHeader";
-import { FaFacebook, FaLinkedinIn } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
-import GoogleTranslate from "../gooleTranslator/GoogleTranslate";
+import {
+  FaAngleRight,
+  FaHouse,
+  FaPhone,
+  FaEnvelope,
+  FaGlobe,
+} from "react-icons/fa6";
+import { FaFacebookF, FaTwitter, FaGooglePlusG, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handlesubmit = async (e) => {
-    e.preventDefault();
-
-    const fromData = { name, address, email, message };
-    console.log(fromData);
-
-    try {
-      const response = await fetch(
-        "https://advanced-engineering-admin.vercel.app/api/v1/contactUs/contact",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(fromData),
-        }
-      );
-
-      const data = await response.json();
-
-      if (data?.success) {
-        alert("Message sent successfully!");
-        setName("");
-        setAddress("");
-        setEmail("");
-        setMessage("");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+  // pattern overlay (similar to screenshot)
+  const patternStyle = {
+    backgroundImage:
+      'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27240%27 height=%27240%27%3E%3Cg fill=%27none%27 stroke=%27%23ffffff%27 stroke-width=%272%27 opacity=%270.35%27%3E%3Cpath d=%27M30 50h48l-8 18H38z%27/%3E%3Ccircle cx=%27180%27 cy=%2755%27 r=%2720%27 opacity=%270.35%27/%3E%3Cpath d=%27M160 120h36l-6 55h-24z%27 opacity=%270.28%27/%3E%3Cpath d=%27M45 165c24 0 24-36 48-36s24 36 48 36%27 opacity=%270.28%27/%3E%3Cpath d=%27M165 175l30 30m0-30l-30 30%27 opacity=%270.25%27/%3E%3C/g%3E%3C/svg%3E")',
+    backgroundSize: "220px 220px",
   };
 
+  const accent = "#f6a400";
+
   return (
-    <div className="bg-gradient-to-t from-[#ECFAFE] to-[#F5F5F5]  pb-10">
-      <Container>
-        {/* <GoogleTranslate /> */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-10 pt-10">
-          {/* Column 1 */}
-          <div className="col-span-2 space-y-4">
-            <h2 className="font-bold text-primary text-xl font-DM leading-6">
-              Advanced Engineers
-            </h2>
-            <p className="font-bold text-[#6D6D6D] text-sm">
-              Head Office:- Rustom Plaza (1st Floor) Supari Patty, Naogaon-6500,
-              Bangladesh
-            </p>
-            <p className="font-bold text-sm text-[#6D6D6D]">
-              Dhaka Office:- Sector-09, Road-3F, House-18, Uttara, <br />{" "}
-              Dhaka-1230.
-            </p>
-            <a
-              className="text-sm font-bold text-[#6D6D6D] block"
-              href="tel:+8802588881523"
-            >
-              Tel: +8802588881523
-            </a>
-            <a
-              className="text-sm font-bold text-[#6D6D6D] block"
-              href="tel:+8801717507404"
-            >
-              Mobile: +8801717507404
-            </a>
+    <footer className="w-full">
+      {/* TOP BLUE SECTION */}
+      <div className="relative bg-[#0b5a93] text-white">
+        {/* Pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.22]"
+          style={patternStyle}
+        />
 
-            <a
-              className="text-sm font-bold text-[#6D6D6D] block"
-              href="mailto:info@advancedengrs.com"
-              rel="noopener noreferrer"
-            >
-              info@advancedengrs.com
-            </a>
+        <Container>
+          <div className="relative z-10 py-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 items-start">
+              {/* Column 1 (CENTER like pic) */}
+              <div className="text-center">
+                <div className="mx-auto w-[88px] h-[88px] bg-white rounded-md flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/logo.png" // ✅ change
+                    alt="Logo"
+                    className="w-full h-full object-contain p-2"
+                  />
+                </div>
 
-            <TitleHeader
-              className="text-xl md:text-3xl pt-3 text-secondary"
-              headerText="Follow Us"
-            />
-            <div className="flex items-center gap-3">
-              <Link
-                className="p-2  bg-ptext rounded-full hover:bg-secondary transition-all duration-500"
-                to="https://www.facebook.com/advancedengrs/"
-                target="_blank"
-              >
-                <FaFacebook className="text-white size-6" />
-              </Link>
-              <Link
-                className="p-2  bg-ptext rounded-full hover:bg-secondary transition-all duration-500"
-                to="https://www.instagram.com/advancedengineers1996?igsh=OXJhZGUwbGhwa3lk&utm_source=ig_contact_invite"
-                target="_blank"
-              >
-                <AiOutlineInstagram className="text-white size-6 " />
-              </Link>
+                <p className="mt-4 text-[13px] leading-7 text-white/90 font-semibold">
+                  তাহাদের বৃটা সরকার ফাঁসি তাহার <br />
+                  পরিবর্তে ইংরেজি ব্রাহ্মণতা করার পর <br />
+                  তাহাদের মুসলমানরা ইংরেজি বর্জন <br />
+                  করে। ফলে{" "}
+                  <span className="font-bold" style={{ color: accent }}>
+                    শিক্ষিত জন
+                  </span>
+                </p>
 
-              <Link
-                to="https://www.linkedin.com/in/s-m-enamul-haque-2b2aa85b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BeTqrg6cPSaODdLhlC2agJg%3D%3D" // Replace with your LinkedIn URL
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-ptext rounded-full hover:bg-secondary transition-all duration-500"
-              >
-                <FaLinkedinIn className="text-white size-6" />
-              </Link>
+                {/* Social (black circles like pic) */}
+                <div className="mt-6 flex items-center justify-center gap-3">
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 transition flex items-center justify-center"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebookF className="text-white text-lg" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 transition flex items-center justify-center"
+                    aria-label="Twitter"
+                  >
+                    <FaTwitter className="text-white text-lg" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 transition flex items-center justify-center"
+                    aria-label="Google Plus"
+                  >
+                    <FaGooglePlusG className="text-white text-lg" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 transition flex items-center justify-center"
+                    aria-label="YouTube"
+                  >
+                    <FaYoutube className="text-white text-lg" />
+                  </a>
+                </div>
+              </div>
 
-              <Link
-                to="https://www.youtube.com" // Replace with your LinkedIn URL
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-ptext rounded-full hover:bg-secondary transition-all duration-500"
-              >
-                <FaYoutube className="text-white size-6" />
-              </Link>
+              {/* Column 2 */}
+              <div>
+                <h3 className="font-semibold text-lg">Important Websites</h3>
+
+                <ul className="mt-4 space-y-3 text-[13px] text-white/90 font-semibold">
+                  {[
+                    "কর্মপথ",
+                    "ই-বুক",
+                    "শিক্ষা বাতায়ন",
+                    "শিক্ষা মন্ত্রণালয়",
+                    "শিক্ষাবোর্ড কুমিল্লা",
+                    "শিক্ষা অধিদপ্তর",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-3">
+                      <FaAngleRight style={{ color: accent }} />
+                      <Link to="#" className="hover:underline">
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Column 3 */}
+              <div>
+                <h3 className="font-semibold text-lg">Our Location</h3>
+
+                <div className="mt-4 h-[150px] w-full rounded-md overflow-hidden border border-white/20 bg-white/10">
+                  <iframe
+                    title="Google Map"
+                    className="w-full h-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    // ✅ change to your embed
+                    src="https://www.google.com/maps?q=Niaz%20Mohammad%20High%20School&output=embed"
+                  />
+                </div>
+              </div>
+
+              {/* Column 4 */}
+              <div>
+                <h3 className="font-semibold text-lg">Contact Us</h3>
+
+                <ul className="mt-4 space-y-3 text-[13px] text-white/90 font-semibold">
+                  <li className="flex gap-3">
+                    <FaHouse className="mt-1" style={{ color: accent }} />
+                    <span>Niaz Mohammad High School</span>
+                  </li>
+
+                  <li className="flex gap-3">
+                    <FaPhone className="mt-1" style={{ color: accent }} />
+                    <a className="hover:underline" href="tel:02334427466">
+                      02334427466
+                    </a>
+                  </li>
+
+                  <li className="flex gap-3">
+                    <FaEnvelope className="mt-1" style={{ color: accent }} />
+                    <span>
+                      Email:{" "}
+                      <a
+                        className="hover:underline break-all"
+                        href="mailto:s103218@yahoo.com"
+                      >
+                        s103218@yahoo.com
+                      </a>
+                    </span>
+                  </li>
+
+                  <li className="flex gap-3">
+                    <FaGlobe className="mt-1" style={{ color: accent }} />
+                    <span>
+                      website:{" "}
+                      <a
+                        className="hover:underline"
+                        href="https://nmdhs.edu.bd"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        nmdhs.edu.bd
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-
-          {/* Column 2 */}
-          <div className="col-span-2 space-y-4">
-            <h2 className="font-bold text-primary text-xl font-DM leading-6">
-              About Us
-            </h2>
-            <ul className="space-y-5 text-[#6D6D6D] text-sm font-bold">
-              <li>
-                <Link to="/ourmission">Our Mission</Link>
-              </li>
-              <li>
-                <Link to="/ourvission">Our Vision</Link>
-              </li>
-              <li>
-                <Link to="/privacypolicy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="/sisterconcern">Sister Concern (Naogaon Impex)</Link>
-              </li>
-              <li>
-                <Link to="/carrier">Carrier and News</Link>
-              </li>
-              <li>
-                <Link to="/danagingdirector">Managing Director Message</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3 */}
-
-          <div className="col-span-2 space-y-4">
-            <h2 className="font-bold text-primary text-xl font-DM leading-6">
-              Quick Contact Us
-            </h2>
-            <form
-              onSubmit={handlesubmit}
-              className="bg-[#d0d0d6] py-5 px-4 rounded-xl space-y-3 shadow-2xl"
-            >
-              <div>
-                <label
-                  className="font-bold text-[#6D6D6D] inline-block w-[80px]"
-                  htmlFor="name"
-                >
-                  Name:
-                </label>
-                <input
-                  className="py-2 px-4 w-full rounded-lg"
-                  type="text"
-                  id="name"
-                  placeholder="Enter Your Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label
-                  className="font-bold text-[#6D6D6D] inline-block w-[80px]"
-                  htmlFor="add"
-                >
-                  Address:
-                </label>
-                <input
-                  className="py-2 px-4 w-full rounded-lg"
-                  type="text"
-                  id="add"
-                  placeholder="Enter Your Address"
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label
-                  className="font-bold text-[#6D6D6D] inline-block w-[80px]"
-                  htmlFor="email"
-                >
-                  E-mail:
-                </label>
-                <input
-                  className="py-2 px-4 w-full rounded-lg"
-                  type="email"
-                  id="email"
-                  placeholder="Enter Your E-mail"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="font-bold text-[#6D6D6D]" htmlFor="text">
-                  Requirement:
-                </label>
-                <textarea
-                  className="w-full h-[50px] py-2 px-4 rounded-lg"
-                  id="text"
-                  placeholder="Enter your requirement"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                ></textarea>
-              </div>
-
-              <button className="relative inline-flex items-center justify-center px-6 py-3 font-medium transition-all bg-secondary text-white rounded-lg hover:bg-white hover:text-black duration-500">
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
-      </Container>
-
-      <div className="text-center pt-10">
-        <hr />
-        <p className="pt-2">
-          Copyright © {new Date().getFullYear()} Advanced Engineers. All right
-          reserved
-        </p>
-        <Link
-          className="block pt-2"
-          target="_blank"
-          to={"https://www.mastersab.com/"}
-        >
-          <p>
-            Development by{" "}
-            <span className="text-[#2CB0E1]">Master Sab Limited</span>
-          </p>
-        </Link>
+        </Container>
       </div>
-    </div>
+
+      {/* BOTTOM BAR */}
+      <div className="bg-[#062b44] text-white">
+        <Container>
+          <div className="py-5 text-center text-sm font-semibold">
+            Copyright © 2026, nmdhs.edu.bd. All Rights Reserved.{" "}
+            <span style={{ color: accent }}>
+              Design & Developed by Cyberdyne Technology Ltd.
+            </span>
+          </div>
+        </Container>
+      </div>
+    </footer>
   );
 };
 

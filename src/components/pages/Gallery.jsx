@@ -1,103 +1,51 @@
-import React, { useEffect, useState } from "react";
-import TitleHeader from "../layer/TitleHeader";
-import Container from "../layer/Container";
 
-const Gallery = () => {
-  const [activeTab, setActiveTab] = useState("showAll");
-  const [loading, setLoading] = useState(true);
+import { Link } from "react-router-dom";
 
-  const [galleryData, setGalleryData] = useState([]);
-
-  const fetchgalleryData = async () => {
-    const response = await fetch(
-      "https://advanced-engineering-admin.vercel.app/api/v1/gallery"
-    );
-    const data = await response.json();
-    setGalleryData(data?.data);
-    setLoading(false);
-  };
-  useEffect(() => {
-    fetchgalleryData();
-  }, []);
-
-  let filteredGalleryData = [];
-
-  if (activeTab === "Exhibition") {
-    filteredGalleryData = galleryData.filter(
-      (item) => item.type === "Exhibition"
-    );
-  } else if (activeTab === "Awards") {
-    filteredGalleryData = galleryData.filter((item) => item.type === "Awards");
-  } else if (activeTab === "Projects"){
-    filteredGalleryData = galleryData.filter((item) => item.type === "Projects");
-
-  }
-  
-  else {
-    filteredGalleryData = galleryData;
-  }
-
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function GallerySection() {
   return (
-    <div className="bg-gray-100 py-20">
-      <Container>
-        <TitleHeader
-          className="text-center text-5xl font-extrabold text-gray-900 mb-6"
-          headerText="Gallery"
-        />
+    <section className="w-full bg-[#eaf6ff] py-10">
+      <div className="mx-auto max-w-6xl px-4">
+        <h2 className="mb-6 text-center text-2xl font-extrabold text-[#0b2b3a]">
+          গ্যালারি
+        </h2>
 
-        <p className="text-center text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mb-12">
-          Explore our gallery showcasing our cutting-edge rice mill machinery,
-          participation in exhibitions, and our prestigious awards and
-          certificates. Each image tells a story of innovation and excellence in
-          engineering.
-        </p>
+        <div className="rounded-md bg-white p-6 shadow-[0_0_0_3px_#8ec7e6,0_10px_18px_rgba(0,0,0,0.18)]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {/* VIDEO GALLERY */}
+            <GalleryCard
+              to="/video-gallery"
+              img="/gallery/video.jpg"   // put in public/gallery/video.jpg
+              btnText="ভিডিও গ্যালারি"
+            />
 
-        {/* Tab Navigation */}
-        <div className="flex justify-center space-x-4 mb-8">
-          {["showAll", "Exhibition", "Awards", "Projects"].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 rounded-lg font-semibold ${
-                activeTab === tab
-                  ? "bg-secondary text-white"
-                  : "bg-white text-gray-700"
-              } shadow transition duration-300 hover:text-white  hover:bg-secondary`}
-            >
-              {tab.charAt(0).toUpperCase() +
-                tab.slice(1).replace(/([A-Z])/g, " $1")}
-            </button>
-          ))}
+            {/* PHOTO GALLERY */}
+            <GalleryCard
+              to="/photo-gallery"
+              img="/gallery/photo.jpg"   // put in public/gallery/photo.jpg
+              btnText="ফটো গ্যালারি"
+            />
+          </div>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Image Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredGalleryData?.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-            >
-              <img
-                src={item.image}
-                alt={item.caption}
-                className="w-full h-60 object-cover transition-transform transform hover:scale-105"
-              />
-              <div className="p-4">
-                <h4 className="md:text-lg text-base font-semibold text-gray-800">
-                  {item.caption}
-                </h4>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
+function GalleryCard({ img, btnText, to }) {
+  return (
+    <div className="relative overflow-hidden bg-white">
+      <img src={img} alt={btnText} className="h-[240px] w-full object-cover" />
+
+      {/* bottom dark overlay */}
+      <div className="absolute inset-x-0 bottom-0 h-16 bg-black/45" />
+
+      {/* yellow button */}
+      <Link
+        to={to}
+        className="absolute left-1/2 bottom-4 -translate-x-1/2 rounded-sm bg-[#f4c533] px-5 py-2 text-sm font-bold text-[#1b1b1b] shadow hover:brightness-95"
+      >
+        {btnText}
+      </Link>
     </div>
   );
-};
-
-export default Gallery;
+}
