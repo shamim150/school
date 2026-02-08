@@ -105,19 +105,19 @@ const Banner = () => {
         <Slider {...settings}>
           <Image
             imageClass="w-full md:h-[60vh] sm:h-[60vh]  h-[30vh] object-cover"
-            scr="/Slidder/Slider_1.jpg"
+            scr="/Slidder/Slider_1.png"
           />
           <Image
             imageClass="w-full md:h-[60vh] sm:h-[60vh]  h-[30vh] object-cover"
-            scr="/Slidder/Slider_2.jpg"
+            scr="/Slidder/Slider_2.png"
           />
           <Image
             imageClass="w-full md:h-[60vh] sm:h-[60vh]  h-[30vh] object-cover"
-            scr="/Slidder/Slider_3.jpg"
+            scr="/Slidder/Slider_3.png"
           />
           <Image
             imageClass="w-full md:h-[60vh] sm:h-[60vh]  h-[30vh] object-cover"
-            scr="/Slidder/Slider_4.jpg"
+            scr="/Slidder/Slider_4.png"
           />
           <Image
             imageClass="w-full md:h-[60vh] sm:h-[60vh]  h-[30vh] object-cover"
