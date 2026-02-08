@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
               </p>
               <ul className="list-disc list-inside pl-4">
                 <li><strong>Email:</strong> info@advancedengrs.com</li>
-                <li><strong>Phone:</strong> +880 1717-507404</li>
+                <li><strong>Phone:</strong> +880 17</li>
                 <li><strong>Address:</strong> Head Office:- Rustom Plaza (1st Floor) Supari Patty, Naogaon-6500, Bangladesh.</li>
                 <li><strong>Address:</strong>Dhaka Office:- Sector-09, Road-3F, House-18, Uttara, Dhaka-1230.</li>
 

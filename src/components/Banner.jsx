@@ -99,7 +99,7 @@ const Banner = () => {
 
   return (
     // after use container
-    <div className="bg-[#f5f5f5] md:py-10 py-3">
+    <div className="bg-[#f5f5f5] mt-[250px] md:py-10 py-3">
       <Container>
       <div className="hover:scale-100 ">
         <Slider {...settings}>

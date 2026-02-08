@@ -37,7 +37,7 @@ const Footer = () => {
               <div className="text-center">
                 <div className="mx-auto w-[88px] h-[88px] bg-white rounded-md flex items-center justify-center overflow-hidden">
                   <img
-                    src="/logo.png" // ✅ change
+                    src="/Logo.png" // ✅ change
                     alt="Logo"
                     className="w-full h-full object-contain p-2"
                   />
@@ -180,7 +180,7 @@ const Footer = () => {
       <div className="bg-[#062b44] text-white">
         <Container>
           <div className="py-5 text-center text-sm font-semibold">
-            Copyright © 2026, nmdhs.edu.bd. All Rights Reserved.{" "}
+            Copyright © 2026, mastersab.com All Rights Reserved.{" "}
             <span style={{ color: accent }}>
               Design & Developed by Cyberdyne Technology Ltd.
             </span>
